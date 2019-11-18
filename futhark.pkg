@@ -1,0 +1,5 @@
+require {
+  github.com/diku-dk/lys 0.0.0-20190807133012+4a50e3d013cdd1a40ac203a759a95c3ad3beb169
+  github.com/diku-dk/cpprandom 1.1.6 #1dad6ec4cdb6c11c5761b98deb04f31a041ae4ed
+  github.com/athas/vector 0.4.4 #3aebc74bafe62ab11347134d48305a3f90465c3f
+}

@@ -1,0 +1,6 @@
+/lib
+/*.c
+/*.o
+/*.h
+/searchlight_wrapper.fut
+/searchlight
