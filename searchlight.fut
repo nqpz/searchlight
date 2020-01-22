@@ -146,10 +146,10 @@ module lys: lys with text_content = text_content = {
 
   type text_content = text_content
 
-  let text_format = "Circles: %d\nCones: %d\nFPS: %d"
+  let text_format () = "Circles: %d\nCones: %d\nFPS: %d"
 
   let text_content (render_duration: f32) (s: state): text_content =
-    ((get_n_circles s.rng).2, (get_n_cones s.rng).2, t32 render_duration)
+    ((get_n_circles s.rng).1, (get_n_cones s.rng).1, t32 render_duration)
 
   let text_colour = const argb.green
 }
