@@ -138,9 +138,9 @@ module lys: lys with text_content = text_content = {
       let cones_visible = map2 (\cone p' -> in_cone p' && reduce_comm (&&) true (map (is_visible cone p') circles))
                                cones ps_adjusted
       in mix_colors (map3 (\c v p' -> if v
-                                   then let dist = vec2.norm p'
-                                        in #just (argb.scale c.color ((1 / dist)**2))
-                                   else #nothing) cones cones_visible ps_adjusted)
+                                      then let dist = vec2.norm p'
+                                           in #just (argb.scale c.color ((1 / dist)**2))
+                                      else #nothing) cones cones_visible ps_adjusted)
 
     in tabulate_2d s.h s.w render_pixel
 
