@@ -106,7 +106,7 @@ module lys: lys with text_content = text_content = {
     in cone with p = p
             with angle = f32.atan2 p.y p.x + f32.pi / 2
 
-  let render (s: state): [][]i32 =
+  let render (s: state): [][]argb.colour =
     let size = i32.min s.h s.w
 
     let rng12 = rnge.split_rng 2 s.rng
