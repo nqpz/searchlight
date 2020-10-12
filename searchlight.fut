@@ -71,7 +71,7 @@ module lys: lys with text_content = text_content = {
 
   let get_circles (rng: rng): []circle =
     let (rng, n_circles) = get_n_circles rng
-    let rngs = rnge.split_rng n_circles rng
+    let rngs = rnge.split_rng (i64.i32 n_circles) rng
     in map random_circle rngs
 
   let get_n_cones (rng: rng): (rng, i32) =
@@ -79,14 +79,14 @@ module lys: lys with text_content = text_content = {
 
   let get_cones (rng: rng): []cone =
     let (rng, n_cones) = get_n_cones rng
-    let rngs = rnge.split_rng n_cones rng
+    let rngs = rnge.split_rng (i64.i32 n_cones) rng
     in map random_cone rngs
 
-  let init (seed: u32) (h: i32) (w: i32): state =
-    {time=0, w, h, rng=rnge.rng_from_seed [i32.u32 seed], paused=false}
+  let init (seed: u32) (h: i64) (w: i64): state =
+    {time=0, w=i32.i64 w, h=i32.i64 h, rng=rnge.rng_from_seed [i32.u32 seed], paused=false}
 
-  let resize (h: i32) (w: i32) (s: state): state =
-    s with h = h with w = w
+  let resize (h: i64) (w: i64) (s: state): state =
+    s with h = i32.i64 h with w = i32.i64 w
 
   let keydown (key: i32) (s: state): state =
     if key == SDLK_r
@@ -142,7 +142,7 @@ module lys: lys with text_content = text_content = {
                                            in #just (argb.scale c.color ((1 / dist)**2))
                                       else #nothing) cones cones_visible ps_adjusted)
 
-    in tabulate_2d s.h s.w render_pixel
+    in tabulate_2d (i64.i32 s.h) (i64.i32 s.w) (\y x -> render_pixel (i32.i64 y) (i32.i64 x))
 
   type text_content = text_content
 
