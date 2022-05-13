@@ -1,5 +1,5 @@
 require {
-  github.com/diku-dk/lys 0.1.13 #671ee908a5b15ffa869a2251c8eb418158a5cce9
-  github.com/diku-dk/cpprandom 1.3.0 #68b67cb55242db59b79d94b5cdf961b2d654e698
-  github.com/athas/vector 0.7.0 #f5aaa219a02949d1eb2978f81419cf5614abfa3d
+  github.com/diku-dk/lys 0.1.16 #f59d97c25005f04a1b518e092707e1e54e593715
+  github.com/diku-dk/cpprandom 1.3.1 #7ea358bd8bbbeb4786030a21a8d947ef37d1e032
+  github.com/athas/vector 0.7.1 #c8f9f029530cb29db9b2957b80e65dbe893c01df
 }
